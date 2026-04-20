@@ -2,54 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ultra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="logo">Ultra</div>
-
-    <button id="themeBtn" class="btn small">
-      🌙
-    </button>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Build APIs. Stay Private. Stay Fast.</h1>
-    <p>A modern RESTful API platform for developers</p>
-
-    <button class="btn primary">Get Started</button>
-  </section>
-
-  <!-- Dashboard -->
-  <section class="dashboard">
-    <div class="dash-header">
-      <h2>API Keys</h2>
-      <button class="btn primary">+ New Key</button>
-    </div>
-
-    <div class="cards">
-
-      <div class="card">
-        <div>
-          <h3>My Project</h3>
-          <p>sk_live_xxxxxxxx</p>
-          <small>120 requests</small>
-        </div>
-
-        <div class="actions">
-          <button class="btn small">Copy</button>
-          <button class="btn danger small">Delete</button>
+  <div class="app-card">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-row">
+        <h1>
+          <i class="fas fa-check-circle"></i>
+          Your daily tasks
+        </h1>
+        <div class="date-chip" id="dateDisplay">
+          <i class="far fa-calendar-alt"></i>
+          <span id="currentDate"></span>
         </div>
       </div>
+      <p class="tagline">Made by Kiroload</p>
+    </header>
 
+    <!-- Add Task Form -->
+    <div class="add-task-area">
+      <div class="input-icon-wrapper">
+        <i class="fas fa-pencil-alt"></i>
+        <input type="text" id="taskInput" placeholder="Write a new task..." autocomplete="off" maxlength="60">
+      </div>
+      <button id="addTaskBtn" class="primary-btn">
+        <i class="fas fa-plus"></i>
+        <span>Add</span>
+      </button>
     </div>
-  </section>
+
+    <!-- Filter & Control Bar -->
+    <div class="action-bar">
+      <div class="filter-group">
+        <button class="filter-chip active" data-filter="all">
+          <i class="fas fa-list"></i>All
+        </button>
+        <button class="filter-chip" data-filter="active">
+          <i class="fas fa-clock"></i>Active
+        </button>
+        <button class="filter-chip" data-filter="completed">
+          <i class="fas fa-check"></i>Completed
+        </button>
+      </div>
+      <button id="clearCompletedBtn" class="danger-chip">
+        <i class="fas fa-trash-alt"></i>
+        <span>Clear done</span>
+      </button>
+    </div>
+
+    <!-- Tasks List Container -->
+    <div class="tasks-panel" id="tasksContainer">
+      <!-- dynamic content injected by js -->
+    </div>
+
+    <!-- Footer Stats -->
+    <footer class="app-footer">
+      <div class="stats-badge" id="tasksCounter">0 items left</div>
+      <div class="auto-save-indicator">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <span>Auto‑saved</span>
+      </div>
+    </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
