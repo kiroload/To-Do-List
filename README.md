@@ -1,5 +1,3 @@
-# 🏷️ A clean daily task manager (To-do list) with simple & modern ui
-
 - **Clean & Modern Interface** – Glassmorphism design with smooth shadows and a distraction-free layout.
 - **Add, Complete & Delete Tasks** – Full CRUD operations with intuitive touch-friendly controls.
 - **Task Filtering** – View all tasks, only active ones, or only completed ones with a single tap.
